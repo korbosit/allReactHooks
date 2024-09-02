@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 function App() {
+    // Example 1
     const [color, setColor] = useState("Red");
     const changeColor = () => {
         setColor("Blue");
