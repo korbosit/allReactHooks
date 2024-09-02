@@ -1,18 +1,19 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function App() {
-    // example 3 useState
+    // example 1 useEffect
     const [count, setCount] = useState(0);
-    const increaseCount = () => {
-        setCount((count) => count + 1);
-        setCount((count) => count + 1);
-        setCount((count) => count + 1);
-        setCount((count) => count + 1);
-    };
+    const [name, setName] = useState("Vovanec");
+
+    useEffect(() => {
+        setTimeout(() => {
+            setCount((count) => count + 1);
+        }, 2000);
+    }, [count, name]);
+
     return (
         <>
-            <h1>Count: {count}</h1>
-            <button onClick={increaseCount}>Increase by 4</button>
+            <h1>I`ve rendered {count} times!</h1>
         </>
     );
 }
